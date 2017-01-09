@@ -4,4 +4,8 @@ Router.route('/', function () {
 
 Router.route('/registration', function(){
     this.render( 'registration_template' );
-})
+});
+
+Router.route('/addPlayer', function(){
+    this.render( 'add_player_template' );
+});
