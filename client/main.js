@@ -3,20 +3,36 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+import nodemailer from 'nodemailer';
+import smtpTransport from 'nodemailer-smtp-transport'
+
+var smtpConfig = {
+    host: 'Gmail',
+    port : 465,
+    secure: true,
+    auth: {
+        user: 'tototest321@gmail.com',
+        pass: 'Azerty@1'
+    }
+};
+
+var transporter = nodemailer.createTransport(smtpConfig);
+
+var mailOptions = {
+    from: 'tototest321@gmail.com',
+    to: 'quentin.ruy@gmail.com',
+    subject: 'yo',
+    text: 'Yo niggae',
+    html: '<p>Yo niggae</p>'
+};
+
+transporter.sendMail(mailOptions, function(error, info) {
+    if (error) {
+        console.log(error);
+    }
+    else {
+	    console.log('Message sent: ' + info.response);
+	}
 });
