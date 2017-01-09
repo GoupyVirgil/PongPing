@@ -12,12 +12,18 @@
                 </header>
                 <div>
                     <div>
-                        <input type="email" placeholder="Adresse e-mail" id="email">
-                        <input type="text" placeholder="Nom d'utilisateur" id="firstname">
-                        <input type="password" placeholder="Mot de passe" id="password">
+                        <input autocomplete="off" type="text" placeholder="Nom de la structure" id="structureName"><br><br>
+                        <select name="select" id="structureType"><br><br>
+                            <option value="sarl">sarl</option>
+                            <option value="st2i">st2i</option>
+                        </select><br><br>
+                        <input autocomplete="off" type="text" placeholder="Nom d'utilisateur" id="firstname"><br><br>
+                        <input autocomplete="off" type="email" placeholder="Adresse e-mail" id="email"><br><br>
+                        <input autocomplete="off" type="phone" placeholder="Téléphone" id="phone"><br><br>
+                        <input autocomplete="off" type="password" placeholder="Mot de passe" id="password">
                         <a href="" id="registration">Inscription</a>
                     </div>
-                    <a href="" id="login">Se connecter</a>
+                    <a href="/" id="login">Se connecter</a>
                     <!--{{>error_template}}-->
                 </div>
             </div>

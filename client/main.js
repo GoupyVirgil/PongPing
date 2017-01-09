@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+import { Session } from 'meteor/session'
 
 import './main.html';
 
@@ -36,3 +37,4 @@ transporter.sendMail(mailOptions, function(error, info) {
 	    console.log('Message sent: ' + info.response);
 	}
 });
+

@@ -35,3 +35,7 @@ transporter.sendMail(mailOptions, function(error, info) {
 Meteor.startup(() => {
     // code to run on server at startup
 });
+
+
+// USE IT WHEN YOU WANT TO DELETE ALL THE USERS
+// Meteor.users.remove({});
